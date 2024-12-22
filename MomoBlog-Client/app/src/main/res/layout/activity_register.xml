@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <!-- 头像输入框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_avatar"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_avatar"
+            android:layout_gravity="start|center_vertical"/>
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/null_avatar"
+            android:adjustViewBounds="true"
+            android:scaleType="fitEnd"/>
+    </LinearLayout>
+
+    <!-- 用户名输入框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="@string/text_username" />
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/text_please_input_username"
+            android:inputType="text"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+    <!-- 密码输入框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/pwd"
+            android:text="@string/text_password"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/text_please_input_password"
+            android:inputType="text"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+    <!-- 性别选择框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/sex"
+            android:text="@string/text_sex"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+        <Spinner
+            android:id="@+id/spinner_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <!-- 个人介绍输入框 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/intro"
+            android:text="@string/text_intro"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_intro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/text_please_input_intro"
+            android:inputType="text"
+            android:minHeight="48dp" />
+    </LinearLayout>
+
+    <!-- 注册按钮 -->
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_height="50dp"
+        android:minHeight="50dp"
+        android:text="@string/text_register"/>
+</LinearLayout>

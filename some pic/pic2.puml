@@ -1,0 +1,33 @@
+@startuml
+
+class ImageUtils {
+  +uriToFile(Context, File, Uri, File): void
+}
+
+class LikeUtils {
+  +likeContent(Context, Int, Int, LikeRepository.CountCallBack): void
+  +cancelLike(Content, Int, LikeRepository.CountCallBack): void
+}
+
+class AddBlogActivity {
+  +onCreate(Bundle): void
+  +nextCommentData(): void
+  +refreshLikeCount(): void
+  +onActivityResult(Int, Int, Intent): void
+  +initView(): void
+}
+
+class HttpPostRequest {
+  +submitHttpPostRequest(Repository, Callback): void
+}
+
+class HttpGetRequest {
+  +sendHttpRequest(Request): void
+}
+
+class FileDownloader {
+  +checkFileHash(File, String): Boolean
+  +downloadFile(Context, String, File, String, String): void
+}
+
+@enduml

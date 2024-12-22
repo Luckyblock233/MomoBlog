@@ -1,0 +1,150 @@
+@startuml
+
+class User {
+  -userTel: String
+  -userPwd: String
+  -userName: String
+  -userEmail: String
+  -userSex: String
+  -userSelfIntroduction: String
+  -userImg: String
+  +toString(): String
+}
+
+class Blog {
+  -blogId: String
+  -blogTime: Date
+  -blogUser: User
+  -blogContent: String
+  -blogLikeCount: Int
+  -blogCommentCount: Int
+  -blogPortTime: Date
+  -blogImg: Boolean
+  -blogImgUrl: String
+  +toString(): String
+}
+
+class LoginActivity {
+  +onCreate(Bundle): void
+  +onLoadingState(boolean): void
+  +initView(): void
+}
+
+class MainActivity {
+  +onCreate(Bundle): void
+  +switchFragment(Fragment): boolean
+  +initView(): void
+}
+
+class ProfileActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+
+class SearchActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+
+class UserRepository {
+  +isLogin(): boolean
+  +getContent(): String
+  +getSex(): Int
+  +getImgUrl(Context): String
+  +registContent(String, String, String, Int, String, File): void
+  +loginContent(String, String, LoginCallBack): void
+  +isLogout(Context, Boolean, User): void
+}
+
+class BlogAdapter {
+  -item: List
+  +onCreateViewHolder(ViewGroup, Int): ViewHolder
+  +onBindViewHolder(ViewHolder, Int): void
+}
+
+class WhathshotFragment {
+  +onCreateView(LayoutInflater, ViewGroup, Bundle): View
+  +initData(): void
+}
+
+class HomeFragment {
+  +onCreateView(LayoutInflater, ViewGroup, Bundle): View
+  +initBlogData(): void
+}
+
+class ImageUtils {
+  +uriToFile(Context, File, Uri, File): void
+}
+
+class LikeUtils {
+  +likeContent(Context, Int, Int, LikeRepository.CountCallBack): void
+  +cancelLike(Content, Int, LikeRepository.CountCallBack): void
+}
+
+class Comment {
+  -commentId: String
+  -commentTime: Date
+  -commenter: User
+  -commentBlog: Blog
+  -commentContent: String
+  -commentLikeCount: Int
+  -commentImg: Boolean
+  -commentImgUrl: String
+  +toString(): String
+}
+
+class AddBlogActivity {
+  +onCreate(Bundle): void
+  +nextCommentData(): void
+  +refreshLikeCount(): void
+  +onActivityResult(Int, Int, Intent): void
+  +initView(): void
+}
+
+class CommentRepository {
+  +fetchAllBlog(Context, String): void
+  +fetchCommentData(Context, String, Int): List<Comment>
+  +fetchBlogData(Context, String, Blog): void
+  +fetchImageDownloader(Context, String, Blog): void
+}
+
+class WelcomeActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+
+class CommentAdapter {
+  +onCreateViewHolder(ViewGroup, Int): ViewHolder
+  +onBindViewHolder(ViewHolder, Int): void
+}
+
+class HttpPostRequest {
+  +submitHttpPostRequest(Repository, Callback): void
+}
+
+class HttpGetRequest {
+  +sendHttpRequest(Request): void
+}
+
+class FileDownloader {
+  +checkFileHash(File, String): Boolean
+  +downloadFile(Context, String, File, String, String): void
+}
+
+class RegisterActivity {
+  +onCreate(Bundle): void
+  +saveImageFromGallery(): void
+  +onActivityResult(Int, Int, Intent): void
+  +initView(): void
+}
+
+User "1" -- "0..*" Blog : writes
+Blog "1" -- "0..*" Comment : has
+User "1" -- "0..*" Comment : makes
+BlogAdapter "0..1" -- "0..*" Blog : displays
+CommentAdapter "0..1" -- "0..*" Comment : displays
+UserRepository "0..1" -- "1" User : manages
+CommentRepository "0..1" -- "0..*" Comment : manages
+FileDownloader "0..1" -- "0..*" Blog : downloads
+
+@enduml

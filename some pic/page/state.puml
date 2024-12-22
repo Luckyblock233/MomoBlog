@@ -1,0 +1,32 @@
+@startuml
+!define RECTANGLE rectangle
+!define DIAMOND diamond
+
+start
+:用户打开界面;
+:初始化 RecyclerView 和 Adapter;
+:设置下拉刷新监听器和滚动监听器;
+
+if (是否进行下拉刷新) then (是)
+  :请求第一页微博数据;
+  :刷新数据;
+  :更新 RecyclerView;
+else (否)
+  if (是否滚动到底部) then (是)
+    :请求下一页微博数据;
+    :加载更多数据;
+    :更新 RecyclerView;
+  else (否)
+    :保持当前数据;
+  endif
+endif
+
+:下载微博图片资源;
+:检查图片是否已下载;
+if (图片未下载) then (是)
+  :下载图片;
+endif
+
+stop
+
+@enduml

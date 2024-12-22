@@ -1,0 +1,33 @@
+@startuml
+start
+:显示欢迎界面;
+:启动倒计时;
+if (用户点击跳过) then (是)
+  :跳过，直接进入登录或主界面;
+else (否)
+  :等待倒计时结束;
+endif
+:检查是否已登录;   
+if (已登录) then (是)
+  :跳转到主界面 (MainActivity);
+else (否)
+  :跳转到登录界面 (LoginActivity);
+endif
+
+:登录界面;
+:输入用户名和密码;
+if (用户名或密码为空) then (是)
+  :显示错误提示;
+  stop
+else (否)
+  :显示加载进度条;
+  :发送登录请求;
+  if (登录成功) then (是)
+    :显示成功提示;
+    :跳转到主界面 (MainActivity);
+  else (否)
+    :显示错误提示;
+  endif
+endif
+stop
+@enduml

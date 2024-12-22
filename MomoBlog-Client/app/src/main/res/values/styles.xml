@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CircleImageView" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item> <!-- 圆角样式 -->
+        <item name="cornerSize">50%</item> <!-- 设置圆角半径为宽高的50%，即圆形 -->
+    </style>
+    <style name="RoundShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item> <!-- 圆角样式 -->
+        <item name="cornerSize">50%</item> <!-- 设置圆角半径为宽高的50%，即圆形 -->
+    </style>
+</resources>

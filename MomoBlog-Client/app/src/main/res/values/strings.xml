@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">MomoBlog</string>
+    <!-- <string name="server_url"></string> -->
+
+    <string name="text_login">登录</string>
+    <string name="text_please_input_intro">请输入自我介绍</string>
+    <string name="text_intro">介绍</string>
+    <string name="text_sex">性别</string>
+    <string name="text_please_input_password">请输入密码</string>
+    <string name="text_password">密码</string>
+    <string name="text_please_input_username">请输入用户名称</string>
+    <string name="text_username">用户名</string>
+    <string name="text_register">注册</string>
+    <string name="text_welcome_skip">跳过</string>
+    <string name="text_search">输入搜索内容</string>
+    <string name="text_home">首页</string>
+    <string name="text_trends">热搜</string>
+    <string name="text_subscribe">动态</string>
+    <string name="text_profile">我的</string>
+    <string name="text_search_icon">search_icon</string>
+    <string name="text_add_blog">新建Blog</string>
+    <string name="text_head_image">head_image</string>
+    <string name="text_welcome_image">welcome_image</string>
+    <string name="text_avatar">头像</string>
+    <string name="text_submit">发表</string>
+    <string name="text_please_input">请输入内容</string>
+    <string name="text_sleep">有记日记的功夫不如在走廊睡上一觉。</string>
+    <string name="text_whatshot">今日热搜</string>
+    <string name="text_details">博客详情</string>
+    <string name="text_comment">输入评论</string>
+    <string name="text_like_count">共有 %d 人觉得很赞！</string>
+
+    <string name="sort_by_postTime"> sort_by_postTime </string>
+    <string name="sort_by_likeCount"> sort_by_likeCount </string>
+
+</resources>

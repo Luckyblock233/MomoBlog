@@ -1,0 +1,53 @@
+@startuml
+
+class LoginActivity {
+  +onCreate(Bundle): void
+  +onLoadingState(boolean): void
+  +initView(): void
+}
+
+class MainActivity {
+  +onCreate(Bundle): void
+  +switchFragment(Fragment): boolean
+  +initView(): void
+}
+
+class ProfileActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+
+class SearchActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+class WhathshotFragment {
+  +onCreateView(LayoutInflater, ViewGroup, Bundle): View
+  +initData(): void
+}
+
+class HomeFragment {
+  +onCreateView(LayoutInflater, ViewGroup, Bundle): View
+  +initBlogData(): void
+}
+
+class AddBlogActivity {
+  +onCreate(Bundle): void
+  +nextCommentData(): void
+  +refreshLikeCount(): void
+  +onActivityResult(Int, Int, Intent): void
+  +initView(): void
+}
+
+class CommentRepository {
+  +fetchAllBlog(Context, String): void
+  +fetchCommentData(Context, String, Int): List<Comment>
+  +fetchBlogData(Context, String, Blog): void
+  +fetchImageDownloader(Context, String, Blog): void
+}
+
+class WelcomeActivity {
+  +onCreate(Bundle): void
+  +initView(): void
+}
+@enduml

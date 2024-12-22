@@ -1,0 +1,16 @@
+@startuml
+actor User
+entity "HomeFragment" as HF
+entity "BlogRepository" as BR
+entity "BlogAdapter" as BA
+entity "Blog" as B
+entity "FileDownloader" as FD
+
+User -> HF : Interact with UI (scroll, refresh)
+HF -> BR : Request data (currentPage)
+BR -> BR : Fetch data and sort
+BR -> FD : Download images
+BR -> HF : Return paginated data
+HF -> BA : Bind data to RecyclerView
+BA -> B : Display blog details (avatar, context)
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+
+start
+
+:a 输入用户名和密码;
+:是否输入用户名?;
+if (是否输入用户名?;) then (b 是)
+    :是否输入密码?;
+    if (是否输入密码?) then (e 是)
+        :用户名是否已注册?;
+        if (用户名是否已注册?) then (f 是)
+            :密码是否正确?;
+            if (d) then (h 是)
+                :登录成功;
+            else (i 否)
+                :提示密码不正确;
+            endif
+        else (g 否)
+            :提示用户名不存在;
+        endif
+    else (e 否)
+        :提示未输入密码;
+    endif
+else (c 否)
+    :提示未输入用户名;
+endif
+
+stop
+
+@enduml

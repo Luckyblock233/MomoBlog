@@ -1,0 +1,20 @@
+@startuml
+!define RECTANGLE rectangle
+!define DIAMOND diamond
+
+start
+:初始化 Handler 和后台线程;
+:启动后台线程进行文件下载;
+
+if (文件下载成功) then (是)
+  :检查文件是否下载成功;
+  :通知主线程加载图片;
+  :加载图片到界面;
+else (否)
+  :文件下载失败或文件为空;
+  :记录错误日志;
+endif
+
+stop
+
+@enduml

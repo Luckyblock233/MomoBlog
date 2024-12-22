@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Demo02" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/pink</item>
+        <item name="android:fontFamily">@font/custom_font</item>
+    </style>
+
+    <style name="Theme.Demo02" parent="Base.Theme.Demo02" />
+</resources>

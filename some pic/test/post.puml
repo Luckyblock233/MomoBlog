@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:a 检查微博或评论内容是否为空;
+
+if (微博或评论内容是否为空?) then (c T)
+    :发送按钮不可点击;
+else (b F)
+    :点击发送按钮;
+endif
+
+stop
+
+@enduml

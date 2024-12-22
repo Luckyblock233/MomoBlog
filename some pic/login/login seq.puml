@@ -1,0 +1,10 @@
+@startuml
+actor 用户
+entity "WelcomeActivity" as Welcome
+entity "LoginActivity" as Login
+entity "MainActivity" as Main
+
+用户 -> Welcome : 启动应用
+Welcome -> Login : 未登录时跳转
+Login -> Main : 登录成功跳转
+@enduml
